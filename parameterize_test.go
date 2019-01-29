@@ -16,4 +16,7 @@ func TestParameterize(t *testing.T) {
 	assert.Equal(t, Parameterize("ABC _ 123"), "abc-123")
 	assert.Equal(t, Parameterize("ABC^^^ 123"), "abc-123")
 	assert.Equal(t, Parameterize("ABC:123"), "abc-123")
+	assert.Equal(t, Parameterize("abc-123"), "abc-123")
+	assert.Equal(t, Parameterize("$%&*"), "")
+	assert.Equal(t, Parameterize("$#@1#$%"), "1")
 }
